@@ -1,0 +1,10 @@
+version: '3'
+services:
+  mountebank:
+    image: expert360/mountebank:1.3.0
+    volumes:
+      - ./imposters:/imposters
+    ports:
+      - "2525:2525"
+      - "7035:7035"
+    command: "--configfile /imposters/imposters.ejs --allowInjection"
